@@ -4,16 +4,16 @@ import {useState, useEffect } from 'react'
 
 function Movies({movies}) {
   return (
-    <ul>
+    <div class="space-x-4">
       {movies.Search.map((movie,index) => (
-        <li>{movie.Title}</li>
+        <div class="inline-block"><img src={movie.Poster} alt = ""/></div>
       ))}
-    </ul>
+    </div>
   );
 }
 
 export async function getStaticProps() {
-  const url = 'http://www.omdbapi.com/?s=star wars&apikey=7ac48157&7ac48157';
+  const url = 'http://www.omdbapi.com/?s=terminator&apikey=7ac48157&7ac48157';
   const res = await fetch(url);
   const data = await res.json();
 
