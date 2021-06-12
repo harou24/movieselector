@@ -1,7 +1,34 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import {useState, useEffect } from 'react'
 
-export default function Home() {
+function Movies({movies}) {
+  return (
+    <ul>
+      {movies.Search.map((movie,index) => (
+        <li>{movie.Title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export async function getStaticProps() {
+  const url = 'http://www.omdbapi.com/?s=star wars&apikey=7ac48157&7ac48157';
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { movies: data },
+  }
+}
+
+export default function Home({movies}) {
   return (
     <div>
       <Head>
@@ -10,6 +37,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Hello</h1>
+      <Movies movies = {movies}/>
     </div>
   )
 }
