@@ -4,23 +4,24 @@ import {useState, useEffect } from 'react'
 import Movies from '../components/Movies';
 import SearchBox from '../components/SearchBox';
 
-export async function getStaticProps() {
-  const url = 'http://www.omdbapi.com/?s=terminator&apikey=7ac48157&7ac48157';
-  const res = await fetch(url);
-  const data = await res.json();
+
+export default function Home(props) {
+  const [movies, setMovies] = useState([]);
+  const [searchValue, setSearchValue] = useState([]);
   
-  if (!data) {
-    return {
-      notFound: true,
-    }
+  const getMovieRequest = async () => {
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=7ac48157&7ac48157`;
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (data.Search)
+      setMovies(data.Search);
   }
 
-  return {
-    props: { movies: data },
-  }
-}
+  useEffect(()=> {
+    getMovieRequest(searchValue);
+  }, [searchValue]);
 
-export default function Home({movies}) {
   return (
     <div>
       <Head>
@@ -30,7 +31,7 @@ export default function Home({movies}) {
       </Head>
       <div className='mt-8'><h1>Movieselector</h1></div>
       <div>
-        <SearchBox/>
+        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
       <div>
         <Movies movies = {movies}/>
