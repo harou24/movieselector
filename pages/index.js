@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import {useState, useEffect } from 'react'
 import Movies from '../components/Movies';
 import SearchBox from '../components/SearchBox';
@@ -14,8 +13,6 @@ export default function Home() {
     const res = await fetch(url);
     const data = await res.json();
 
-    console.log('Data->'+data);
-//    console.log('Search->'+JSON.stringify(data.Search));
     if (data.Search)
     {
       setMovies(data.Search);
