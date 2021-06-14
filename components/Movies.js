@@ -1,10 +1,10 @@
+import MovieItem from "./MovieItem";
+
 function Movies(props) {
     return (
-        <div class="space-x-4">
+        <div className="space-x-4">
             {props.movies.map((movie,index) => (
-            <div class="inline-block">
-                <img src={movie.Poster} alt = "movie"/>
-            </div>
+                <MovieItem key= {movie.imdbID} movie={movie}/>
             ))}
         </div>
     );

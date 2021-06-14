@@ -4,8 +4,8 @@ import {useState, useEffect } from 'react'
 import Movies from '../components/Movies';
 import SearchBox from '../components/SearchBox';
 
+export default function Home() {
 
-export default function Home(props) {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState([]);
   
@@ -14,8 +14,16 @@ export default function Home(props) {
     const res = await fetch(url);
     const data = await res.json();
 
+    console.log('Data->'+data);
+//    console.log('Search->'+JSON.stringify(data.Search));
     if (data.Search)
+    {
       setMovies(data.Search);
+    }
+    else
+    {
+      setMovies([]);
+    }
   }
 
   useEffect(()=> {
