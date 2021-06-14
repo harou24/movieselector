@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-gray-400;
+    }
+
+    h1 {
+         @apply text-5xl;
+         color: #98FB98;
+         text-align:center;
+    
+      }
+}
