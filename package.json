@@ -2,6 +2,7 @@
   "name": "Movieselector",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://harou24.github.io/movieselector/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
