@@ -1,3 +1,7 @@
+# URL
+ 
+MovieSelector is hosted on Github and is accessible at the following link : https://harou24.github.io/movieselector/
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
