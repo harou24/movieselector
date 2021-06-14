@@ -22,3 +22,5 @@ The app will be available at : http://localhost:3000/
 https://www.omdbapi.com/
 
 https://nextjs.org/
+
+https://tailwindcss.com/
