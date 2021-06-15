@@ -12,8 +12,16 @@ MovieSelector is hosted on Github and is accessible at the following link : http
 
     git clone https://github.com/harou24/movieselector.git
     cd movieselector
+   
+## With npm :
+
     npm install
     npm run dev
+    
+## With yarn :
+    yarn
+    yarn run dev
+   
     
 The app will be available at : http://localhost:3000/movieselector
 
