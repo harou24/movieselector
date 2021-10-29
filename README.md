@@ -6,7 +6,7 @@
  
 # URL
  
-MovieSelector is hosted on Github and is accessible at the following link : https://harou24.github.io/movieselector/
+MovieSelector is hosted on Github and is accessible by clicking on the following link : https://harou24.github.io/movieselector/
 
 # How to run locally ?
 
